@@ -1,5 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/LandingScreen/landing_screen.dart';
+import 'package:whatsapp_clone/routes.dart';
+import 'package:whatsapp_clone/theme.dart';
 
 void main() {
   runApp(const WhatsappClone());
@@ -10,12 +12,10 @@ class WhatsappClone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text("Whatsapp"),
-        ),
-      ),
+    return MaterialApp(
+      home: LandingScreen(),
+      theme: CustomTheme().theme,
+      onGenerateRoute: AppRoute().router,
     );
   }
 }
