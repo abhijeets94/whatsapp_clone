@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/HomeScreen/home_screen.dart';
+import 'package:whatsapp_clone/auth/screens/login_screen.dart';
+import 'package:whatsapp_clone/common/custom_button.dart';
+import 'package:whatsapp_clone/screens/HomeScreen/home_screen.dart';
 
 class LandingScreen extends StatelessWidget {
   static const routeName = "/landing-screen";
@@ -15,7 +17,7 @@ class LandingScreen extends StatelessWidget {
             Center(
               child: Text(
                 "Welcome to Chat app",
-                style: Theme.of(context).textTheme.headline1,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
             const SizedBox(
@@ -42,19 +44,13 @@ class LandingScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: MediaQuery.of(context).size.width / 1.5,
-              height: 60,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, HomeScreen.routeName);
-                },
-                child: const Text(
-                  "Agree and Continue",
-                  style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
+                width: MediaQuery.of(context).size.width / 1.5,
+                height: 60,
+                child: CustomButton(
+                    text: "Agree and Continue",
+                    onPressed: () {
+                      Navigator.pushNamed(context, LoginScreen.routeName);
+                    })),
           ],
         ),
       ),
