@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/auth/screens/login_screen.dart';
-import 'package:whatsapp_clone/common/custom_button.dart';
-import 'package:whatsapp_clone/screens/HomeScreen/home_screen.dart';
+import 'package:whatsapp_clone/features/auth/screens/login_screen.dart';
+import 'package:whatsapp_clone/common/widgets/custom_button.dart';
 
 class LandingScreen extends StatelessWidget {
+  const LandingScreen({super.key});
   static const routeName = "/landing-screen";
   @override
   Widget build(BuildContext context) {

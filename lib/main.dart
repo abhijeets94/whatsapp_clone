@@ -1,17 +1,21 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:whatsapp_clone/colors.dart';
-import 'package:whatsapp_clone/screens/LandingScreen/landing_screen.dart';
+import 'package:whatsapp_clone/features/landing/landing_screen.dart';
 import 'package:whatsapp_clone/firebase_options.dart';
 import 'package:whatsapp_clone/routes.dart';
-import 'package:whatsapp_clone/theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const WhatsappClone());
+  runApp(
+    const ProviderScope(
+      child: WhatsappClone(),
+    ),
+  );
 }
 
 class WhatsappClone extends StatelessWidget {
