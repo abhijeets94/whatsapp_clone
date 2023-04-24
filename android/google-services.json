@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "749323157784-t6920kvg9ae1ifkaodg3mmaqa5gbqvgv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.whatsapp_clone",
+            "certificate_hash": "5db32cbdc901dcfce7fad49390ee0843422b6560"
+          }
+        },
+        {
           "client_id": "749323157784-bu60j6s0qm5h35mh5b61jk747otitn4n.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -2,6 +2,7 @@ import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:whatsapp_clone/colors.dart';
+import 'package:whatsapp_clone/common/utils/utils.dart';
 import 'package:whatsapp_clone/common/widgets/custom_button.dart';
 import 'package:whatsapp_clone/features/auth/repository/auth_repository.dart';
 
@@ -42,6 +43,11 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       ref
           .read(authRepositoryProvider)
           .signInWithPhone('+${country!.phoneCode}$phoneNumber', context);
+    } else {
+      showSnackBar(
+          context: context,
+          content:
+              "Atleast try to be an educated person. Can't you read properly? Just fill out all the contents and then press next. Like what's wrong with you?");
     }
   }
 
@@ -50,9 +56,14 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: true,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
         title: const Text("Enter your phone number"),
         backgroundColor: backgroundColor,
+        elevation: 0,
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(18.0),

@@ -16,7 +16,7 @@ class LandingScreen extends StatelessWidget {
             ),
             Center(
               child: Text(
-                "Welcome to Chat app",
+                "Welcome to Baatein app",
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
