@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class UserModel {
   final String name;
@@ -7,7 +5,7 @@ class UserModel {
   final String profilePic;
   final bool isOnline;
   final String phoneNumber;
-  final List<String> groupID;
+  final List groupID;
   UserModel({
     required this.name,
     required this.uid,
@@ -35,8 +33,8 @@ class UserModel {
       profilePic: map['profilePic'] as String,
       isOnline: map['isOnline'] as bool,
       phoneNumber: map['phoneNumber'] as String,
-      groupID: List<String>.from(
-        (map['groupID'] as List<String>),
+      groupID: List.from(
+        (map['groupID'] as List),
       ),
     );
   }

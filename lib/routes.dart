@@ -3,6 +3,7 @@ import 'package:whatsapp_clone/features/auth/screens/login_screen.dart';
 import 'package:whatsapp_clone/features/auth/screens/otp_screen.dart';
 import 'package:whatsapp_clone/common/widgets/error.dart';
 import 'package:whatsapp_clone/features/auth/screens/user_information_screen.dart';
+import 'package:whatsapp_clone/features/select_contacts/screens/select_contacts_screen.dart';
 
 class AppRoute {
   Route router(RouteSettings settings) {
@@ -17,7 +18,14 @@ class AppRoute {
             settings: settings);
       case UserInformationScreen.routeName:
         return MaterialPageRoute(
-            builder: (_) => const UserInformationScreen(), settings: settings);
+          builder: (_) => const UserInformationScreen(),
+          settings: settings,
+        );
+      case SelectContactsScreen.routeName:
+        return MaterialPageRoute(
+          builder: (_) => const SelectContactsScreen(),
+          settings: settings,
+        );
       default:
         return MaterialPageRoute(
             builder: (_) =>

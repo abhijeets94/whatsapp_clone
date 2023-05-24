@@ -27,6 +27,16 @@ class AuthRepository {
     required this.firestore,
   });
 
+  Future<UserModel?> getCurrentUserData() async {
+    var userData =
+        await firestore.collection('users').doc(auth.currentUser?.uid).get();
+    UserModel? user;
+    if (userData.data() != null) {
+      user = UserModel.fromMap(userData.data()!);
+    }
+    return user;
+  }
+
   void signInWithPhone(String phoneNumber, BuildContext context) async {
     try {
       await auth.verifyPhoneNumber(
@@ -92,7 +102,7 @@ class AuthRepository {
       firestore.collection('users').doc(uid).set(user.toMap());
       Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (builder) => MobileScreenLayout()),
+        MaterialPageRoute(builder: (builder) => MobileLayoutScreen()),
         (route) => false,
       );
     } catch (e) {
